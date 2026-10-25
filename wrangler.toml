@@ -1,0 +1,20 @@
+name = "blockworld"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+
+[assets]
+directory = "./"
+binding = "ASSETS"
+run_worker_first = true
+
+# Other sites allowed to join worlds (comma separated). The game's own address is always allowed.
+[vars]
+ALLOWED_ORIGINS = ""
+
+[[durable_objects.bindings]]
+name = "ROOMS"
+class_name = "Room"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Room"]
